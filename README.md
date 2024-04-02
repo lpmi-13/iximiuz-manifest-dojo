@@ -22,9 +22,7 @@ The actual problem will be chosen on startup of the applications, and you'll see
 
 ![architecture diagram](architecture-diagram.png)
 
-Because k3s runs with containerd, we can't just run locally built images, so we need to set up a locally running container registry.
-
-Besides that, we'll have a few containers running in the cluster
+We'll have a few containers running in the cluster in our application namespace (dojo):
 
 - a flask webserver
 - a server to deal with logs-processing (a bit contrived, but useful for local volume mounts)
@@ -33,7 +31,7 @@ Besides that, we'll have a few containers running in the cluster
 
 ## Running locally
 
-This is not intended to be run locally. The main issue is that the container registry won't be available, so if you'd like to run a version of this locally, then you should use the original [K8s Manifest Dojo](https://github.com/lpmi-13/k8s-manifest-dojo), which was desigend for local use.
+This is not intended to be run locally. The main issue is that the container registry (`registry.iximiuz.com`) won't be available, so if you'd like to run a version of this locally, then you should use the original [K8s Manifest Dojo](https://github.com/lpmi-13/k8s-manifest-dojo), which was desigend for local use.
 
 ## Entering the Dojo
 
