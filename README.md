@@ -47,7 +47,7 @@ If you'd like to consult the grafana dashboards, you'll need to expose a port ex
 
 ![expose a port](expose-port.png)
 
-Potential issues:
+### Potential issues:
 
 - misconfigured deployment
 - misconfigured ports
@@ -86,6 +86,6 @@ kubectl -n dojo get po
 
 Once you've identified the issue and fixed it, you can set up the next issue by running the `scripts/next_exercise.sh` script. That will pick another misconfiguration at random and redeploy all the services. Follow the same steps from above to troubleshoot and fix it.
 
-## Resetting the cluster from scratch
+### Resetting the cluster from scratch
 
 If, for any reason, you want to reset everything, you can run the k3s "kill all" script at `/usr/local/bin/k3s-killall.sh` (the k3s installer should put it into the `$PATH`). After that, to bring the cluster back up, you can run `sudo systemctl restart k3s`.
