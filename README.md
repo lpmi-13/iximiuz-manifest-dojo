@@ -43,6 +43,10 @@ The cluster will be started with one problem chosen at random, and you'll need t
 
 > The first place to look is in the spec for the misbehaving service. Since the problem is a misconfigured manifest, that's where you need to fix things. Use the errors to figure out which manifest to look in. You can also check the grafana dashboards for clues.
 
+If you'd like to consult the grafana dashboards, you'll need to expose a port externally, which can easily be done via the Expose Prt button in the upper right of the playground. After that, expose port 32000, which is what the grafana service NodePort is using.
+
+![expose a port](expose-port.png)
+
 Potential issues:
 
 - misconfigured deployment
