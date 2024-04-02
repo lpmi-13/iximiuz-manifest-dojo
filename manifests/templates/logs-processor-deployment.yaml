@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: logs-processor
+  namespace: dojo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: logs-processor
+  template:
+    metadata:
+      labels:
+        app: logs-processor
+    spec:
+      containers:
+      - name: logs-processor
+        image: registry.iximiuz.com/logs-processor:latest
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        volumeMounts:
+        - name: k3s-mount
+          mountPath: /tmp/k3s-data
+        ports:
+        - containerPort: 8005
+        livenessProbe:
+          httpGet:
+            path: /log-count
+            port: 8005
+          # the app needs to do some processing before it's ready
+          initialDelaySeconds: DELAY_IN_SECONDS
+          timeoutSeconds: TIMEOUT_IN_SECONDS
+          periodSeconds: PERIOD_IN_SECONDS
+          failureThreshold: FAILURE_THRESHOLD
+        env:
+          - name: ENVIRONMENT
+            valueFrom:
+              configMapKeyRef:
+                name: environment
+                key: environment
+      volumes:
+      - name: k3s-mount
+        persistentVolumeClaim:
+          claimName: log-data-claim
