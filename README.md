@@ -35,10 +35,13 @@ This is not intended to be run locally. The main issue is that the container reg
 
 ## Entering the Dojo
 
+First, start up a single-node k3s playground (it's not architected to deal with multi-node clusters). You can also run this from a basic docker playground, but then you'll need to install k3s yourself (see steps below).
+
 > Because there is currently no way to run init scripts in the iximiuz labs challenges there's a bit of manual setup needed
 
-After the playground has started, run te folliwing commands:
+After the playground has started, run the folliwing commands:
 
+- `curl -sfL https://get.k3s.io | sh -` (this is only necessary if you start a regular docker playground. If you use a k3s single-node playground, you won't need to run this)
 - `git clone https://github.com/lpmi-13/iximiuz-manifest-dojo`
 - `cd iximiuz-manifest-dojo`
 - `./scripts/full_setup_cluster.sh`
