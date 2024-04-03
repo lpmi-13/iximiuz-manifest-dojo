@@ -35,7 +35,15 @@ This is not intended to be run locally. The main issue is that the container reg
 
 ## Entering the Dojo
 
-> Because there is currently no way to run init scripts in the iximiuz labs challenges there's a bit of manual setup needed, but currently that's just running `git clone https://github.com/lpmi-13/iximiuz-manifest-dojo`. After that, just run `init.sh` to set up k3s and you should be ready to go.
+> Because there is currently no way to run init scripts in the iximiuz labs challenges there's a bit of manual setup needed
+
+After the playground has started, run te folliwing commands:
+
+- `git clone https://github.com/lpmi-13/iximiuz-manifest-dojo`
+- `cd iximiuz-manifest-dojo`
+- `./scripts/full_setup_cluster.sh`
+
+...and you should be ready to go!
 
 The cluster will be started with one problem chosen at random, and you'll need to figure out what it is and how to fix it. Depending on what the issue is, it might take up to 30 seconds for it to be apparent.
 
