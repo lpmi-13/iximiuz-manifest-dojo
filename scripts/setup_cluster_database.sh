@@ -1,8 +1,8 @@
 DATABASE_ENDPOINT=$(kubectl -n dojo get po postgres-0 -o=jsonpath='{.status.podIP}')
 
-docker run \
+podman run \
   -it \
-  --network host \
+  --network=host \
   -e PGPASSWORD=supersecretproductionpassword \
   -v ./scripts:/var/scripts \
   postgres:16 \
