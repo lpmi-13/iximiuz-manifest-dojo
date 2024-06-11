@@ -9,7 +9,7 @@ fi
 ./scripts/tear_down.sh
 
 # Next, we'll build all the images
-# ./scripts/build_containers.sh
+./scripts/build_containers.sh
 
 # Clear out current application manifests and copy the templates back in
 # rm -rf manifests/application/*
