@@ -6,7 +6,7 @@ if ! [ -d "./manifests/application" ]; then
 fi
 
 # First, tear down anything currently running
-# ./scripts/tear_down.sh
+./scripts/tear_down.sh
 
 # Next, we'll build all the images
 # ./scripts/build_containers.sh
