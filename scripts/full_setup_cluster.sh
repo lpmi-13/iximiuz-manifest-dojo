@@ -1,3 +1,5 @@
+set -x
+
 # Check if the manifests copy target directory exists, and if not, create it
 if ! [ -d "./manifests/application" ]; then
   mkdir ./manifests/application
