@@ -55,8 +55,8 @@ kubectl apply -f manifests/application/config-map.yaml
 # and let's also set up the data in the postgres database so the user-info
 # service can query it
 
-echo "waiting 5 seconds for database to be ready..."
-sleep 5
+echo "waiting 15 seconds for database to be ready..."
+sleep 15
 
 ./scripts/setup_cluster_database.sh
 
