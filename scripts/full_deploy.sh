@@ -61,12 +61,12 @@ sleep 5
 ./scripts/setup_cluster_database.sh
 
 # and now we add the kube-state-metrics stack
-kubectl apply -f manifests/kube-state-metrics
+# kubectl apply -f manifests/kube-state-metrics
 
 # followed by prometheus and grafana
-kubectl apply -f manifests/prometheus
-kubectl apply -f manifests/grafana
-kubectl apply -f manifests/node-exporter
+# kubectl apply -f manifests/prometheus
+# kubectl apply -f manifests/grafana
+# kubectl apply -f manifests/node-exporter
 
 # and lastly, let's add some background load to the cluster
-kubectl apply -f manifests/load-generator
+# kubectl apply -f manifests/load-generator
